@@ -12,7 +12,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
-    <title>CUTHBERT</title>
+    <title>Beats</title>
   </head>
   <body>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -62,16 +62,16 @@
 
      <!-- Page Content -->
     <div id="content">
-
-        <h1>CUTHBERT</h1>
+        <h2>Chords</h2>
         <p>
-            Writing music is a challenge even for very experienced musicians. There is one side of the problem of just having to know all the harmony and counterpoint theory and there another side of using that knowledge to write something new. For an experienced musician a barrier to writing music can just be lack of inspiration (can't think of something new to try out). For someone that's relatively inexperienced but has ideas on rhythm but don't know the music theory to manifest that idea into something more. Their barrier is that much needed knowledge. CUTHBERT is a software tool we have wrote to alleviate these barriers to music writing. 
-        </p>
-        <p>
-            CUTHBERT, Comprehensive aUTo-arrangement algoritHm for BEats n’ RhyThms, is a music generator that pulls its intuition for music from datasets containing thousands of scores of varying genres. Random sampling from these datasets produces a baseline for the passage (the inspiration element), this could dictate any number of things including the rhythm, melody, or beat of the piece but can also be replaced by the user of CUTHBERT if they want a piece of music to be generated from a user provided snippet (common file type for this is a DAW file). The music generation that follows 
+          We used a dataset of chords in various styles such as house, hip-hop, pop, lo-fi, etc. We first cleaned the chords to be in 4/4 time and attached beats to the chords randomly. Even with just the beats and the chords, the system was able to sound decently good. 
         </p>
 
-        <iframe width="1000" height="1000" src="https://zhang-lucy.github.io/cuthbert-site/widgets/generate_melody.html"></iframe>
+
+        <h2>Chord Similarity</h2>
+        <p>
+          For the loop selection, explained in further detail in the next section, we had a data structure that mapped chords to loops. However, each chord didn't always have a perfect match, so we determined a chord similarity algorithm to find the next closest match. We decided on pitch similarity, where we took the set of all the notes in each chord, and determined the proportion of matching notes to non-matching notes. We then took the chord with the highest proportion.
+        </p>
     </div>
 
 </div>  
