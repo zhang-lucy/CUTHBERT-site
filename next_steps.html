@@ -82,6 +82,16 @@
         <p>
             The chord similarity algorithm also could have been adjusted to generate better loops. The final melodies sounded fairly decent, but were still a little dissonant at times. This is likely due to the generated chords not matching the chords in the chord-to-sequence data structure. Thus, we might have tried a different similarity measure such as interval equivalence. 
         </p>
+        <h2>Repetition</h2>
+        <p>
+            One artistic note in writing music is the use of repetition in pieces. As a passage plays an audience will slowly pick up on the tune and will here it repeated every so often and builds  there ways and give the audience a surprise and keep them on their tones. An example of this would be a ABABC music repetition. The current framework doesn't support this yet, but here would be the steps to take to add this feature to CUTHBERT.
+        </p>
+        <p>
+            Instead of preloading more datasets and trying to analyze them for music repetition (this could be hard because some parts might be repeating while others or not, subtle differences between could make a metric for repetition difficult to define) we would use a on the fly approach to computing these repetitions. The previous models work by grabbing the frequencies of transitions from different states and used to that generate the next in a melody based off the resulting probabilities. This data was obtained the previously found and cleaned datasets. What we would different here is not generate any starting set of probabilities in markov chain using datasets (YES, we start with no data). The dataset we use to build the markov chain will be the passage itself as it plays. 
+        </p>
+        <p>
+            As a passage starts the Markov chains frequency table is initially empty, so CUTHBERT decides to make a 4 bar piece, once we have that we have a new state for the model (we will call this state A), we now have the option of repeating A or making something new, B. We would choose either randomly and then we record the transition and update our frequency table. If we decided on A then the resulting passage would have an AA pattern and the passage will then have a tendency to repeat A's indefinitely. Or, if B was chosen we would have an AB pattern and for every instance we play A we would a have a higher tendency to B right after it, possibly yielding an ABAB pattern for the passage. 
+        </p>
     </div>
 
 </div>  
