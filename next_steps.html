@@ -12,7 +12,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
-    <title>CUTHBERT</title>
+    <title>Beats</title>
   </head>
   <body>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -39,6 +39,7 @@
         <div class="sidebar-header">
             <h3>CUTHBERT</h3>
         </div>
+
         <ul class="list-unstyled components">
             <p>Menu</p>
             <li>
@@ -55,32 +56,28 @@
             </li>            
             <li>
                 <a href="challenges.html">Challenges</a>
-            </li>            
-            <li>
-                <a href="next_steps.html">Next Steps</a>
             </li>
             <li>
                 <a href="acknowledgements.html">Acknowledgements</a>
-            </li>
-            <li>
-                <a href="https://github.com/OmnInfinity/CUTHBERT"><img src="imgs/github.png" id="github"></a>
             </li>
         </ul>
     </nav>
 
      <!-- Page Content -->
     <div id="content">
-
-        <h1>CUTHBERT</h1>
+        <h1>Next Steps</h1>
         <p>
-            Writing music is a challenge even for very experienced musicians. There is one side of the problem of just having to know all the harmony and counterpoint theory and there another side of using that knowledge to write something new. For an experienced musician a barrier to writing music can just be lack of inspiration (can't think of something new to try out). For someone that's relatively inexperienced but has ideas on rhythm but don't know the music theory to manifest that idea into something more. Their barrier is that much needed knowledge. CUTHBERT is a software tool we have wrote to alleviate these barriers to music writing. 
+            Our beat generation is mostly independent of chords and melodies. However, we believe there is a lot that can be done to make our compositions more rhythmically interesting by ensuring the melodic rhythm complements the beat rhythm well. To do this, one possibility could be to analyze the relationship between where the notes of the melody and beats lie, and to see if there are any patterns that emerge.
         </p>
-        <img src="imgs/garage_band.jpg" class="center" style="horizontal-align:middle;padding-top:10px;padding-bottom:10px" width=50%>
+        <p>          
+            There is a lot of potential future work in terms of chords and chord progressions. In CUTHBERT, our chord dataset comes from many different styles, but these chords are sometimes mixed together. If we gathered more data in each of the styles, it would be interesting for CUTHBERT to compose music in a user-specified style. It would also be interesting to learn more sophistic 
+            ated models for chord generation in order to create our own chords that weren't present in the original datasets. 
+        </p>   
         <p>
-            CUTHBERT, Comprehensive aUTo-arrangement algoritHm for BEats n’ RhyThms, is a music generator that pulls its intuition for music from datasets containing thousands of scores of varying genres. Random sampling from these datasets produces a baseline for the passage (the inspiration element), this could dictate any number of things including the rhythm, melody, or beat of the piece but can also be replaced by the user of CUTHBERT if they want a piece of music to be generated from a user provided snippet (common file type for this is a DAW file). The music generation that follows 
-        </p>
+            Furthermore, our melody generation only relies on the last generated note, which may lead the pattern astray. In future iterations, we hope to incorporate a longer lookback. We also currently don't use any structure in our melody outside of just tying loops together, using an ABA pattern or structure might be helpful. 
+        </p>   
         <p>
-            We hope you enjoy reading about our final project!<br>-Lucy, Karthik, Kevin, Alex, Edmund
+            The chord similarity algorithm also could have been adjusted to generate better loops. The final melodies sounded fairly decent, but were still a little dissonant at times. This is likely due to the generated chords not matching the chords in the chord-to-sequence data structure. Thus, we might have tried a different similarity measure such as interval equivalence. 
         </p>
     </div>
 
