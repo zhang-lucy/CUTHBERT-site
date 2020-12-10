@@ -1,2 +1,2 @@
 matplotlib==3.3.2
-
+music21==6.1.0
