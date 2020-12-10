@@ -69,6 +69,7 @@
         <p>
           For the pitch-to-pitch matrix and chords-to-sequence data structure, we used the classified dataset. The chords generated in the previous part would then access the chord-to-sequence data structure and select a loop randomly.
         </p>
+        <img src="imgs/pitch_to_pitch.png">
         <p>
           We created a pitch-to-pitch matrix, sampling from the Wikifonia dataset and looking through each note transition. Since everything had been transposed to be C Major, it was easy to sanity check, looking at the provided heat map in Figure \ref{fig:pitch_to_pitch}. The range of notes used in the matrix was from C1-B7, approximately the range of a piano. We tried using this matrix to generate tunes, but found that it didn't work too well, since C->C was the most common transition.
         </p>   
@@ -79,6 +80,7 @@
         <p>
 
         </p>
+        <img src="imgs/pitch_to_pitch_samples.png">
     </div>
 
 </div>  

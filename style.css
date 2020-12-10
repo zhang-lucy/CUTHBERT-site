@@ -48,19 +48,19 @@ a, a:hover, a:focus {
     transition: all 0.3s;
 }
 
+img {
+	horizontal-align: middle;
+}
+
 #content {
 	height: 100%;
 }
 
 #sidebar {
-	float:left;
-	width:200px;
-    min-height:100%;
     background: #7386D5;
-
     min-width: 250px;
     max-width: 250px;
-    float: none;
+    min-height: 100vh;
     display:inline-block;
     vertical-align:top;
     color: #fff;
