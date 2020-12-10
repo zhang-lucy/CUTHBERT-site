@@ -65,15 +65,15 @@
 
      <!-- Page Content -->
     <div id="content">
-        <h1>Beats</h1>
+        <h1>Melody Generation</h1>
         <p>
-          In order to generate beats, we started with magenta's Groove MIDI Dataset. This dataset contains over 1150 MIDI files and is mostly in 4/4 time with a few exceptions. When imported into music21, the dataset is represented as a regular score would be, but each MIDI pitch number corresponds to a unique drum. For example, the pitch C1, corresponding to MIDI pitch 36, represents a kick drum.
+          For the pitch-to-pitch matrix and chords-to-sequence data structure, we used the classified dataset. The chords generated in the previous part would then access the chord-to-sequence data structure and select a loop randomly.
         </p>
         <p>
-          We discovered that while chords and melodies sound horrendous when joined together randomly, beats could generally be processed independent from chords and melodies. The main obstacle in joining these beats with chords and melodies is with rhythm. 
+          We created a pitch-to-pitch matrix, sampling from the Wikifonia dataset and looking through each note transition. Since everything had been transposed to be C Major, it was easy to sanity check, looking at the provided heat map in Figure \ref{fig:pitch_to_pitch}. The range of notes used in the matrix was from C1-B7, approximately the range of a piano. We tried using this matrix to generate tunes, but found that it didn't work too well, since C->C was the most common transition.
         </p>   
         <p>
-            Below is a demo of our chord generator:
+            Below is a demo of our melody generator:
         </p>   
         <iframe width="1000" height="1000" src="https://zhang-lucy.github.io/cuthbert-site/widgets/generate_melody.html"></iframe>  
     </div>
