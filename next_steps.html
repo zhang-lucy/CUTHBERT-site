@@ -84,6 +84,7 @@
         <h2>Melody</h2>   
         <p>
             Our melody generation currently only relies on the last generated note, which may lead the pattern astray. In future iterations, we hope to incorporate a longer lookback. We also currently don't use any structure in our melody outside of just tying loops together, using an ABA pattern or structure might be helpful. 
+            Another thing we wanted to try for melody generation was incorporating the TheoryTab dataset of thousands of melodies from popular songs. This would have bolstered our capacity to generate melodies significantly.
         </p>
         <p>
             The chord similarity algorithm also could have been adjusted to generate better loops. The final melodies sounded fairly decent, but were still a little dissonant at times. This is likely due to the generated chords not matching the chords in the chord-to-sequence data structure. Thus, we might have tried a different similarity measure such as interval equivalence. 
