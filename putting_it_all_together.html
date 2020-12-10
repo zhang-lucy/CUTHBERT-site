@@ -72,6 +72,18 @@
      <!-- Page Content -->
     <div id="content">
         <h1>The Finished Piece</h1>
+        <p>
+            The CUTHBERT system uses the following procedure for generating a compostion:
+        </p>
+        <ul class="list">
+            <li class="list_item">Randomly choose a 4-bar beats MIDI from the cleaned dataset.</li>
+            <li class="list_item">Randomly choose a 4-bar chord MIDI from the cleaned dataset.</li>
+            <li class="list_item">Generate a melody using the chord MIDI as input.</li>
+            <li class="list_item">Write these MIDI's to a file and move on to the next 4-bar segment.</li>
+        </ul>
+        <p>
+            At the end of this procedure, CUTHBERT has generated a composition comprised of many 4-bar segments. Below is a picture of a score that CUTHBERT generated, and what it sounds like once we assign samples and sounds to the MIDI's. \\
+        </p>
         <img width=75% src="imgs/final_piece.png">
         <audio controls>
             <!-- <source src="horse.ogg" type="audio/ogg"> -->
