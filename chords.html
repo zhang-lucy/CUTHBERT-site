@@ -67,17 +67,22 @@
     <div id="content">
         <h1>Chords</h1>
         <p>
-          We used a dataset of chords in various styles such as house, hip-hop, pop, lo-fi, etc. We first cleaned the chords to be in 4/4 time and attached beats to the chords randomly. Even with just the beats and the chords, the system was able to sound decently good. 
+            We used a datasets of chord progressions in various styles such as house, hip-hop, pop, lo-fi, etc., as a foundation for our composition. Our approach was to transpose all chord progressions to one key, and then randomly sample a chord progression every 4 bars. In particular, we used the Splice Chord Progression MIDI Dataset and the BasicWavez 50 Famous EDM Chord Progression MIDI Dataset. Combined, this gives us 100 chord progressions for use.
         </p>
-
-
+        <p>
+            After importing the datasets, we transposed everything to C major / A minor. This allowed us to make sure our composition stayed in the same key when combining chord progressions, allowing it to sound like one song. After this step, we noted that while most chords were in the key of C, there were some strange chords remaining in the more Jazzy chord progressions.
+        </p>
+        <p>
+            We first cleaned the chords to be in 4/4 time and attached beats to the chords randomly. Even with just the beats and the chords, the system was able to sound fairly decent. 
+        </p>
         <h2>Chord Similarity</h2>
         <p>
           For the loop selection, explained in further detail in the next section, we had a data structure that mapped chords to loops. However, each chord didn't always have a perfect match, so we determined a chord similarity algorithm to find the next closest match. We decided on pitch similarity, where we took the set of all the notes in each chord, and determined the proportion of matching notes to non-matching notes. We then took the chord with the highest proportion.
         </p>
-        <img src="imgs/after_filtering.png">
-        <img src="imgs/before_filtering.png">
-        <iframe width="1000" height="1000" src="https://zhang-lucy.github.io/cuthbert-site/widgets/chord_demo.html"></iframe>  
+        <p>
+            Below is a demo of our chord generator. Try changing the random seed and length! It takes a while to run, so give it a minute or two. (We couldn't get MuseScore to work in a website form, sadly):
+        </p>
+        <iframe width="1000" height="500" src="https://zhang-lucy.github.io/cuthbert-site/widgets/chord_demo.html"></iframe>  
 
     </div>
 </div>  

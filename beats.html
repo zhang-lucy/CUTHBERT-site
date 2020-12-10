@@ -63,22 +63,32 @@
         </ul>
     </nav>
 
+
+
+
      <!-- Page Content -->
     <div id="content">
         <h1>Beats</h1>
         <p>
-          In order to generate beats, we started with magenta's Groove MIDI Dataset. This dataset contains over 1150 MIDI files and is mostly in 4/4 time with a few exceptions. When imported into music21, the dataset is represented as a regular score would be, but each MIDI pitch number corresponds to a unique drum. For example, the pitch C1, corresponding to MIDI pitch 36, represents a kick drum.
+            In order to generate beats, we started with Magenta's Groove MIDI Dataset. This dataset contains over 1150 MIDI files and is mostly in 4/4 time with a few exceptions. When imported into music21, the dataset is represented as a regular score would be, but each MIDI pitch number corresponds to a unique drum. For example, the pitch C1, corresponding to MIDI pitch 36, represents a kick drum. 
         </p>
         <p>
-          We discovered that while chords and melodies sound horrendous when joined together randomly, beats could generally be processed independent from chords and melodies. The main obstacle in joining these beats with chords and melodies is with rhythm. 
+            We discovered that while chords and melodies sound horrendous when joined together randomly, beats could generally be processed independent from chords and melodies. The main obstacle in joining these beats with chords and melodies is with rhythm. 
         </p>   
         <p>
-            Below is a demo of our beat generator:
-        </p>   
-        <p>
-            Unfortunately, the outputs don't look too clean in the browser. Here are a few examples that the beat generator might produce:
+            To solve the rhythm problem, we used the heuristic of only keeping in kicks and snares (corresponding to MIDI pitches 36, 38, and 40 in the data representation). We did this because we saw that kicks and snares often lie on the main beat, with other drums acting as embellishments between these beats. This also kept our beats simple. 
         </p>
-
+        <p>
+            In order to do this, we loaded the Groove dataset into music21, iterated through each "note" (or chord, representing multiple drums on one beat), and removed everything that wasn't a kick or snare. This was our final beat representation.
+        </p>
+        <p>
+            Below is the first two measures of one of the Groove MIDI samples, before filtering:
+        </p>   
+        <img src="imgs/before_filtering.png">
+        <p>
+            The same sample, after filtering:
+        </p>
+        <img src="imgs/after_filtering.png">
     </div>
 
 </div>  

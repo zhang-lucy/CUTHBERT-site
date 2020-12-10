@@ -23,6 +23,12 @@ h2{
     align-items: stretch;
 }
 
+audio {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 body {
 	height: 100%
@@ -73,7 +79,8 @@ img {
 }
 
 #content {
-	height: 100%;
+    height: 100%;
+    margin-bottom: 50px;
 }
 
 #sidebar {
